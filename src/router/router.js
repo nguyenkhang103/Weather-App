@@ -1,15 +1,20 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue"
+import Router from 'vue-router'
 import HomeView from '../views/HomeView'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-export default new VueRouter({
-  routes: [
-    {
-      path: '/',
-      name: 'HomeView',
-      component: HomeView
-    },
-  ]
+let routes = [
+  {
+    path: '/',
+    name: 'HomeView',
+    component: HomeView
+  },
+]
+const router = new Router({
+  mode: 'history',
+  base: `${process.env.BASE_URL}`,
+  routes
 })
+
+export default router
